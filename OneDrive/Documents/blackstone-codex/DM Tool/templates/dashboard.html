@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blackstone Codex Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #2e2e2e;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        pre {
+            background: #3e3e3e;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Blackstone Codex – Campaign Dashboard</h1>
+        
+        <h2>Session Log</h2>
+        <!-- The session log is passed in from Flask as "session_log" -->
+        <pre>{{ session_log | tojson(indent=2) }}</pre>
+        
+        <h2>Campaign Timeline</h2>
+        <!-- The campaign timeline is passed in from Flask as "timeline" -->
+        <pre>{{ timeline | tojson(indent=2) }}</pre>
+    </div>
+</body>
+</html>

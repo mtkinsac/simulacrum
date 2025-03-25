@@ -1,0 +1,22 @@
+[
+    {
+        "timestamp": "2025-03-20 18:22:13",
+        "role": "DM",
+        "message": "hi"
+    },
+    {
+        "timestamp": "2025-03-20 18:22:13",
+        "role": "Gandor",
+        "message": "I heard you say: 'hi' The ancient scrolls whisper truths."
+    },
+    {
+        "timestamp": "2025-03-20 18:22:22",
+        "role": "DM",
+        "message": "h"
+    },
+    {
+        "timestamp": "2025-03-20 18:22:22",
+        "role": "Gandor",
+        "message": "I heard you say: 'h' Contemplate deeply."
+    }
+]
