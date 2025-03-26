@@ -1,1 +1,83 @@
-// TODO: Implement this file
+// This JSON schema defines the structure for the Lore Codex entries in the game.
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "codexID": {
+      "type": "string",
+      "description": "Unique identifier for the codex entry."
+    },
+    "category": {
+      "type": "string",
+      "description": "Category of the codex entry (e.g., Legacy, Mythical)."
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the codex entry."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the codex entry."
+    },
+    "narrativeLayer": {
+      "type": "string",
+      "description": "Narrative layer to which this entry belongs (e.g., Act I, Act II)."
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Keywords associated with the codex entry."
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/entry"
+      }
+    }
+  },
+  "definitions": {
+    "entry": {
+      "type": "object",
+      "properties": {
+        "entryID": {
+          "type": "string",
+          "description": "Unique identifier for the specific entry."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the specific entry."
+        },
+        "content": {
+          "type": ["string", null],
+          "description": "(Optional) Content of the specific entry."
+        },
+        // Optional field to indicate if this entry is unlocked by a memory
+        // This field is not required and can be null
+        // It should be used to link to a memory that unlocks this entry
+        // if applicable.
+        // Example: { "$ref":"#/definitions/memory" }
+        // where memory is another schema definition for memory objects.
+        // For now, we will keep it simple and just use a string.
+        // In future, we can expand it to a more complex structure if needed.
+        // Note: This field is optional and can be null.
+        // If not used, it should be omitted from the JSON object.
+[
+  {
+    "codexID": "legacy_ancient_forests",
+    "category": "Legacy",
+    "title": "Ancient Forests",
+    "description": "Vast woodlands that hold the secrets of forgotten civilizations.",
+    "narrativeLayer": "Act I",
+    "keywords": ["forest", "nature", "ancient"],
+    "entries": [
+      {
+        "entryID": "dreamsmith_statue",
+        "title": "Dreamsmith Statue",
+        "content": "A weathered statue depicting a powerful figure known as a Dreamsmith.",
+        "unlockedByMemory": "dreamsmith_statue"
+      }
+      ]
+    }
+  ]
