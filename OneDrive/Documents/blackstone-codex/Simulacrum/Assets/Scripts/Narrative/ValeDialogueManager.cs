@@ -6,7 +6,6 @@ public class ValeDialogueManager : MonoBehaviour
     public static ValeDialogueManager Instance;
     public TTSController ttsController;
     public ValeTransitionController valeTransition;
-    public DialogueContextBuilder contextBuilder;
     public ChatGPTConnector chatConnector;
 
     void Awake()
@@ -29,7 +28,7 @@ public class ValeDialogueManager : MonoBehaviour
 
     public void HandleValeSpeakRequest(string prompt)
     {
-        string context = contextBuilder.BuildContext(prompt);
+        string context = AdaptiveDialogueContextBuilder.BuildContext(prompt);
         Debug.Log("ValeDialogueManager: Context built: " + context);
         StartCoroutine(ProcessDialogue(context));
     }
@@ -42,10 +41,12 @@ public class ValeDialogueManager : MonoBehaviour
     void OnDialogueResponse(string response)
     {
         Debug.Log("ValeDialogueManager: Received response: " + response);
+
         if (ttsController != null)
             ttsController.PlayText(response);
         else
             Debug.LogWarning("ValeDialogueManager: TTSController not assigned!");
+
         if (valeTransition != null)
             valeTransition.FadeIn();
         else

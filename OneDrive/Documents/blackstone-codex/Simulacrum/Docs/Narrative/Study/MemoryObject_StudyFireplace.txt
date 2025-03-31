@@ -1,0 +1,7 @@
+MemoryObject: StudyFireplace
+Location: Study Fireplace
+Lore: "A crackling fireplace, casting flickering shadows on the walls."
+[Emotion]: Calm
+[Intensity]: Low
+[RealmTie]: Study
+REFLECTION: "The flames dance, revealing fleeting glimpses of other scenes."

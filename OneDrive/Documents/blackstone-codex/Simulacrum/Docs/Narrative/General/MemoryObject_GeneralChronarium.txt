@@ -1,0 +1,8 @@
+MemoryObject: GeneralChronarium
+Location: The Chronarium
+Lore: "The Chronarium, an ancient device that manipulates the flow of time itself."
+[Emotion]: Tension
+[Intensity]: High
+[RealmTie]: General
+[AssociatedCodex]: CodexEntry_Chronarium
+REFLECTION: "A dangerous power, capable of unraveling the past and rewriting the future."

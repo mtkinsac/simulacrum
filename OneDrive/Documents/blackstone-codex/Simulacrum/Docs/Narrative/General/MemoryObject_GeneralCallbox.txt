@@ -1,0 +1,8 @@
+MemoryObject: GeneralCallbox
+Location: The Callbox
+Lore: "The Callbox, a device of unknown origin, capable of traversing dimensions."
+[Emotion]: Curious
+[Intensity]: High
+[RealmTie]: General
+[AssociatedCodex]: CodexEntry_Callbox
+REFLECTION: "A key to unlocking the mysteries of the multiverse."

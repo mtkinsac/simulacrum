@@ -1,0 +1,3 @@
+[Realm]: General
+[MoodTrigger]: Curious
+LINE: "What is the true nature of the Simulacrum? What is its purpose?"

@@ -1,0 +1,8 @@
+MemoryObject: StudyRuneStones
+Location: Study Rune Table
+Lore: "The rune stones glow with a faint light, their symbols resonating with the air around them."
+[Emotion]: Mystic
+[Intensity]: Low
+[RealmTie]: Study
+[AssociatedCodex]: CodexEntry_StudyRunes
+REFLECTION: "The patterns pulse, as if alive."

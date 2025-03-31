@@ -1,0 +1,8 @@
+MemoryObject: StudyTapestry
+Location: Study Wall
+Lore: "The tapestry depicts a scene of a great battle, the figures frozen in a moment of conflict."
+[Emotion]: Tension
+[Intensity]: Medium
+[RealmTie]: Study
+[AssociatedCodex]: CodexEntry_StudyTapestry
+REFLECTION: "A silent clash of steel, echoing through time."

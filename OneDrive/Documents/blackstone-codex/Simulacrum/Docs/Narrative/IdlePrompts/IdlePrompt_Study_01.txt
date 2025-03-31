@@ -1,0 +1,3 @@
+[Realm]: Study
+[MoodTrigger]: Somber
+LINE: "The silence in here... it hums with echoes of forgotten rituals."

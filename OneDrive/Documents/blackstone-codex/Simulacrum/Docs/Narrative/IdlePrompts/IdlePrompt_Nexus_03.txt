@@ -1,0 +1,3 @@
+[Realm]: Nexus
+[MoodTrigger]: Curious
+LINE: "These glyphs... they pulse with a strange energy. I must decipher them."

@@ -1,58 +1,46 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class SimulacrumCoreManager : MonoBehaviour
 {
-    public static SimulacrumCoreManager Instance;
-    private Dictionary<string, GameObject> loadedModules = new Dictionary<string, GameObject>();
-    public bool devMode = true;
+    private static SimulacrumCoreManager _instance;
+    public static SimulacrumCoreManager Instance => _instance;
+
+    private Dictionary<string, object> registeredModules = new Dictionary<string, object>();
 
     void Awake()
     {
-        if (Instance == null)
+        if (_instance != null && _instance != this)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-            Debug.Log("SimulacrumCoreManager initialized.");
+            Destroy(this.gameObject);
+            return;
+        }
+
+        _instance = this;
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void RegisterModule(string moduleName, object moduleInstance)
+    {
+        if (!registeredModules.ContainsKey(moduleName))
+        {
+            registeredModules.Add(moduleName, moduleInstance);
+            Debug.Log($"[SimulacrumCoreManager] Registered module: {moduleName}");
         }
         else
         {
-            Destroy(gameObject);
+            Debug.LogWarning($"[SimulacrumCoreManager] Module already registered: {moduleName}");
         }
     }
 
-    public void RegisterModule(string moduleName, GameObject module)
+    public T GetModule<T>(string moduleName)
     {
-        if (!loadedModules.ContainsKey(moduleName))
+        if (registeredModules.TryGetValue(moduleName, out object module))
         {
-            loadedModules.Add(moduleName, module);
-            if (devMode) Debug.Log("Module registered: " + moduleName);
+            return (T)module;
         }
-        else
-        {
-            Debug.LogWarning("Module already registered: " + moduleName);
-        }
-    }
 
-    public void UnregisterModule(string moduleName)
-    {
-        if (loadedModules.ContainsKey(moduleName))
-        {
-            loadedModules.Remove(moduleName);
-            if (devMode) Debug.Log("Module unregistered: " + moduleName);
-        }
-        else
-        {
-            Debug.LogWarning("Module not found: " + moduleName);
-        }
-    }
-
-    public void PrintRegisteredModules()
-    {
-        Debug.Log("Registered Modules:");
-        foreach (var module in loadedModules)
-        {
-            Debug.Log(" - " + module.Key);
-        }
+        Debug.LogWarning($"[SimulacrumCoreManager] Module not found: {moduleName}");
+        return default;
     }
 }

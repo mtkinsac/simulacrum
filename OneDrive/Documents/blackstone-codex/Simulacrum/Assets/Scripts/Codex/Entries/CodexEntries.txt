@@ -1,0 +1,34 @@
+CodexEntry: AncientDevice
+ID: Device001
+Summary: An ancient device found within the Nexus, its purpose unknown.
+Category: Device
+Tags: [Ancient], [Nexus], [Device], [VoiceTriggered]
+Fallback Lore: "The device hums with a strange energy, its secrets lost to time."
+
+CodexEntry: EchoedChamber
+ID: Location207
+Summary: A chamber within the Nexus that captures and repeats memories not its own.
+Category: Location
+Tags: [Nexus], [Memory], [VoiceTriggered], [Lore]
+Fallback Lore: "Voices of the past echo endlessly through these halls, none of them yours."
+
+CodexEntry: DreamsmithScroll
+ID: Scroll099
+Summary: A fragment of Dreamsmith lore written in living ink.
+Category: Relic
+Tags: [Dreamsmith], [Ink], [Magic], [VoiceTriggered]
+Fallback Lore: "The scroll reshapes itself as you read—revealing knowledge when you are ready."
+
+CodexEntry: TheGatingKey
+ID: KeyX77
+Summary: A crystalline key rumored to open inter-realm gateways.
+Category: Artifact
+Tags: [Portal], [Key], [Ancient], [VoiceTriggered], [Unlockable]
+Fallback Lore: "It pulses with warmth when near the Callbox, as if awakening from slumber."
+
+CodexEntry: ShiftingThreshold
+ID: Realm033
+Summary: A transitional space between the known and unknown—only visible to those who listen.
+Category: Realm
+Tags: [Threshold], [Transition], [Lore], [VoiceTriggered]
+Fallback Lore: "The veil here is thin. Time bends. Echoes dance like fireflies."

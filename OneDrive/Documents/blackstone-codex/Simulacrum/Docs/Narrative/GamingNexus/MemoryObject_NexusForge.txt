@@ -1,0 +1,7 @@
+MemoryObject: NexusForge
+Location: Nexus Ancient Forge
+Lore: "An ancient forge, its fires long extinguished, yet radiating a residual heat."
+[Emotion]: Somber
+[Intensity]: Low
+[RealmTie]: GamingNexus
+REFLECTION: "The echoes of creation and destruction linger in this desolate place."

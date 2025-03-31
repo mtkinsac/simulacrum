@@ -1,0 +1,3 @@
+[Realm]: Study
+[MoodTrigger]: Curious
+LINE: "I wonder what secrets these old tomes hold... perhaps a key to the Nexus?"

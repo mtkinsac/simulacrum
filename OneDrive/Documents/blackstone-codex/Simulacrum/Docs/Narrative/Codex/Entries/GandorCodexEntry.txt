@@ -1,0 +1,6 @@
+Gandor Codex Entry:
+
+ID: Gandor001
+Summary: A cryptic entity, possibly ancient, that guides the player through the Nexus.
+Category: Entities
+Tags: Ancient, Cryptic, Mentor, Nexus

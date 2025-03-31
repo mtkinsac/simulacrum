@@ -1,0 +1,7 @@
+MemoryObject: NexusMapTable
+Location: Nexus Map Table
+Lore: "A holographic map table, displaying shifting constellations and unknown realms."
+[Emotion]: Curious
+[Intensity]: Low
+[RealmTie]: GamingNexus
+REFLECTION: "The cosmos unfolds before me, a tapestry of infinite possibilities."

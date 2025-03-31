@@ -1,0 +1,3 @@
+[Realm]: Balcony
+[MoodTrigger]: Awe
+LINE: "To think... so many worlds, so many stories, unfolding beyond our sight."

@@ -1,37 +1,39 @@
-using UnityEngine;
+#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
+#endif
+using UnityEngine;
 using System;
 
 public class SummonableContentEvents : MonoBehaviour
 {
+#if ENABLE_INPUT_SYSTEM
+    public InputAction summonAction;
+#endif
+
     public static event Action OnSummonContentRequest;
-    public InputAction summonContentAction;
 
     void OnEnable()
     {
-        if (summonContentAction != null)
-        {
-            summonContentAction.Enable();
-            summonContentAction.performed += HandleSummonContent;
-        }
-        else
-        {
-            Debug.LogWarning("SummonableContentEvents: summonContentAction is not assigned.");
-        }
+#if ENABLE_INPUT_SYSTEM
+        summonAction?.Enable();
+#endif
     }
 
     void OnDisable()
     {
-        if (summonContentAction != null)
-        {
-            summonContentAction.performed -= HandleSummonContent;
-            summonContentAction.Disable();
-        }
+#if ENABLE_INPUT_SYSTEM
+        summonAction?.Disable();
+#endif
     }
 
-    private void HandleSummonContent(InputAction.CallbackContext context)
+    void Update()
     {
-        OnSummonContentRequest?.Invoke();
-        Debug.Log("SummonableContentEvents: Summon content request triggered.");
+#if ENABLE_INPUT_SYSTEM
+        if (summonAction != null && summonAction.triggered)
+        {
+            Debug.Log("Summon triggered!");
+            OnSummonContentRequest?.Invoke();
+        }
+#endif
     }
 }

@@ -1,0 +1,8 @@
+MemoryObject: StudyGlobe
+Location: Study DM Table
+Lore: "An ancient globe, its surface etched with strange constellations and unknown lands."
+[Emotion]: Curious
+[Intensity]: Medium
+[RealmTie]: Study
+[AssociatedCodex]: CodexEntry_StudyGlobe
+REFLECTION: "The stars seem to shift when observed too closely."

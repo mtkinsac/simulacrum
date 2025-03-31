@@ -1,0 +1,8 @@
+MemoryObject: NexusWallRunes
+Location: Nexus Wall
+Lore: "The runes glow faintly, their patterns shifting and changing, as if alive."
+[Emotion]: Curious
+[Intensity]: High
+[RealmTie]: GamingNexus
+[AssociatedCodex]: CodexEntry_NexusRunes
+REFLECTION: "The walls whisper secrets in a language I don't understand."

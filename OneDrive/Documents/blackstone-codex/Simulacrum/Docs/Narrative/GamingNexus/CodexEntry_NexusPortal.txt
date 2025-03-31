@@ -1,0 +1,6 @@
+CodexEntry: Nexus Portal
+ID: NexusPortal001
+Summary: A shimmering portal located in the Gaming Nexus, leading to unknown realms.
+Category: Location
+Tags: [Nexus], [Portal], [Travel], [Realm]
+Fallback Lore: "A gateway to other worlds, its destination remains a mystery."

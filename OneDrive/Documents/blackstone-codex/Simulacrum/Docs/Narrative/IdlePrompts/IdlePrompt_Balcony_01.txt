@@ -1,0 +1,4 @@
+[Realm]: Balcony
+[MoodTrigger]: Joyful
+[TimeOfDay]: Evening
+LINE: "The stars... they sing a song of endless possibilities."

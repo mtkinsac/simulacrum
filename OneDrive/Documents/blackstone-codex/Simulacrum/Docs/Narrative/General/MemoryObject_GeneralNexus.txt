@@ -1,0 +1,8 @@
+MemoryObject: GeneralNexus
+Location: The Nexus
+Lore: "The Nexus, a place between worlds, a crossroads of realities."
+[Emotion]: Mystic
+[Intensity]: Medium
+[RealmTie]: General
+[AssociatedCodex]: CodexEntry_Nexus
+REFLECTION: "A place of convergence, where the boundaries blur."

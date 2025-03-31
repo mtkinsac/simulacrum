@@ -1,0 +1,8 @@
+MemoryObject: GeneralDreamsmith
+Location: Dreamsmith's Workshop
+Lore: "The workshop of the Dreamsmith, a legendary figure who shaped the very fabric of dreams."
+[Emotion]: Somber
+[Intensity]: Low
+[RealmTie]: General
+[AssociatedCodex]: CodexEntry_Dreamsmith
+REFLECTION: "A place of creation and imagination, where the impossible becomes real."

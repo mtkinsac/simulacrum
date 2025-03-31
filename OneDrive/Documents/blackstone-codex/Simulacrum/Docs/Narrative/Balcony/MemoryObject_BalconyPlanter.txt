@@ -1,0 +1,7 @@
+MemoryObject: BalconyPlanter
+Location: Balcony Planter
+Lore: "A vibrant planter, filled with exotic flowers that glow with an ethereal light."
+[Emotion]: Joyful
+[Intensity]: Medium
+[RealmTie]: Balcony
+REFLECTION: "Life blooms even in the most unexpected places."

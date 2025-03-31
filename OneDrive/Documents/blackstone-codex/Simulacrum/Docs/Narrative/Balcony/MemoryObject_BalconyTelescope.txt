@@ -1,0 +1,8 @@
+MemoryObject: BalconyTelescope
+Location: Balcony Observation Deck
+Lore: "A high-powered telescope, its lens focused on the distant stars."
+[Emotion]: Awe
+[Intensity]: High
+[RealmTie]: Balcony
+[AssociatedCodex]: CodexEntry_BalconyStars
+REFLECTION: "The universe unfolds in breathtaking grandeur."

@@ -1,77 +1,87 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class CallboxController : MonoBehaviour
 {
     public string selectedDestinationID;
     private DestinationLoader destinationLoader;
     private TransitionEffectsManager effectsManager;
+    private RealmStateManager realmStateManager;
 
     void Start()
     {
         destinationLoader = FindObjectOfType<DestinationLoader>();
         effectsManager = FindObjectOfType<TransitionEffectsManager>();
+        realmStateManager = FindObjectOfType<RealmStateManager>();
 
         if (destinationLoader == null)
-            Debug.LogError("CallboxController: DestinationLoader not found!");
+            Debug.LogError("CallboxController: DestinationLoader not found.");
+
         if (effectsManager == null)
-            Debug.LogError("CallboxController: TransitionEffectsManager not found!");
+            Debug.LogError("CallboxController: TransitionEffectsManager not found.");
+
+        if (realmStateManager == null)
+            Debug.LogError("CallboxController: RealmStateManager not found.");
     }
 
-    // Called when a destination is selected via UI or TARDIS interaction.
-    public void SelectDestination(string destinationID)
+    // Existing functionality: Activate callbox to initiate destination travel.
+    public void ActivateCallbox()
     {
-        selectedDestinationID = destinationID;
-        Debug.Log("CallboxController: Destination selected: " + destinationID);
-    }
+        Debug.Log("CallboxController: Callbox activated for destination: " + selectedDestinationID);
 
-    // Called when the player confirms their destination choice.
-    public void ConfirmDestination()
-    {
-        if (string.IsNullOrEmpty(selectedDestinationID))
+        if (effectsManager != null)
         {
-            Debug.LogWarning("CallboxController: No destination selected!");
-            return;
-        }
-
-        DestinationData dest = destinationLoader.GetDestinationByID(selectedDestinationID);
-        if (dest != null)
-        {
-            // Trigger ambient FX for the destination.
-            effectsManager.TriggerTransitionEffects(selectedDestinationID);
-
-            // Update realm state.
-            RealmStateManager realmState = FindObjectOfType<RealmStateManager>();
-            if (realmState != null)
-            {
-                realmState.SetLastVisitedRealm(selectedDestinationID);
-                realmState.UnlockDestination(selectedDestinationID);
-            }
-            else
-            {
-                Debug.LogWarning("CallboxController: RealmStateManager not found!");
-            }
-
-            // Simulate scene transition after a delay.
-            Invoke("LoadDestinationScene", 3f);
+            effectsManager.PlayFX("portal-flicker");
+            StartCoroutine(DelayedLoad());
         }
         else
         {
-            Debug.LogError("CallboxController: Destination data not found for ID: " + selectedDestinationID);
+            Debug.LogWarning("CallboxController: No transition effects available. Loading destination directly.");
+            LoadDestinationAndUnlock();
         }
     }
 
-    void LoadDestinationScene()
+    private IEnumerator DelayedLoad()
     {
-        DestinationData dest = destinationLoader.GetDestinationByID(selectedDestinationID);
-        if (dest != null && !string.IsNullOrEmpty(dest.sceneName))
+        yield return new WaitForSeconds(2f); // Simulated transition time
+        LoadDestinationAndUnlock();
+    }
+
+    private void LoadDestinationAndUnlock()
+    {
+        Debug.Log("CallboxController: Transition complete, loading destination...");
+        destinationLoader.LoadDestination(selectedDestinationID);
+
+        if (realmStateManager != null)
         {
-            Debug.Log("CallboxController: Loading scene: " + dest.sceneName);
-            SceneManager.LoadScene(dest.sceneName);
+            realmStateManager.UnlockDestination(selectedDestinationID);
         }
         else
         {
-            Debug.LogWarning("CallboxController: Scene name not specified; staying in current scene.");
+            Debug.LogWarning("CallboxController: RealmStateManager is null during UnlockDestination.");
         }
+    }
+
+    // --- Phase 3.0 Additions ---
+
+    // Relay monitor summon commands to the SummonableMonitorController
+    public void SummonMonitors(string type)
+    {
+        Debug.Log("CallboxController: Requesting summon of monitors type: " + type);
+        if (SummonableMonitorController.Instance != null)
+            SummonableMonitorController.Instance.SummonMonitor(type);
+        else
+            Debug.LogError("CallboxController: SummonableMonitorController instance not found.");
+    }
+
+    // Relay monitor dismissal command
+    public void DismissMonitors()
+    {
+        Debug.Log("CallboxController: Requesting dismissal of all monitors.");
+        if (SummonableMonitorController.Instance != null)
+            SummonableMonitorController.Instance.DismissAllMonitors();
+        else
+            Debug.LogError("CallboxController: SummonableMonitorController instance not found.");
     }
 }

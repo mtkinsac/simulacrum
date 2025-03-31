@@ -1,0 +1,3 @@
+[Realm]: Nexus
+[MoodTrigger]: Tension
+LINE: "I feel... watched. As if something ancient is stirring."

@@ -1,0 +1,7 @@
+MemoryObject: StudyDesk
+Location: Study Writing Desk
+Lore: "A worn wooden desk, covered in scrolls and arcane diagrams."
+[Emotion]: Somber
+[Intensity]: Low
+[RealmTie]: Study
+REFLECTION: "The weight of forgotten knowledge lingers here."

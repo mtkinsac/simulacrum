@@ -1,0 +1,8 @@
+MemoryObject: GeneralThreshold
+Location: The Shifting Threshold
+Lore: "The Shifting Threshold, a liminal space between realms, constantly in flux."
+[Emotion]: Awe
+[Intensity]: Medium
+[RealmTie]: General
+[AssociatedCodex]: CodexEntry_Threshold
+REFLECTION: "A place of transition, where reality itself seems to unravel."

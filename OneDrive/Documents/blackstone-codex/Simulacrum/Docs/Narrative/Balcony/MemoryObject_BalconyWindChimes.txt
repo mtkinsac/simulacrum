@@ -1,0 +1,7 @@
+MemoryObject: BalconyWindChimes
+Location: Balcony Wind Chimes
+Lore: "Delicate wind chimes, their melodies carried on the gentle breeze."
+[Emotion]: Calm
+[Intensity]: Low
+[RealmTie]: Balcony
+REFLECTION: "A symphony of the wind, soothing and serene."

@@ -1,0 +1,20 @@
+Gandor Dialogue Expansion (Phase 3.1)
+
+Summon Responses:
+"The veils part, and I am here."
+"What knowledge do you seek in this fleeting moment?"
+"Your voice echoes through the Nexus. Speak."
+"I sense a disturbance. What is your query?"
+"The threads of fate shift. What do you require?"
+"From the depths, I listen."
+"The echoes respond. What do you wish to know?"
+"The ancient ones watch. What is it?"
+"I am here, but for how long?"
+"The Nexus calls, and I answer."
+
+Idle Comments:
+"The air hums with forgotten energies."
+"Time is a river, always flowing."
+"Secrets lie hidden in the shadows."
+"The stars whisper of forgotten realms."
+"The walls of the Nexus hold many stories."

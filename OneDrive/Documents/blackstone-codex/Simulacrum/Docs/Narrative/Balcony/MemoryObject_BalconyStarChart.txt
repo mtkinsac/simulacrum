@@ -1,0 +1,8 @@
+MemoryObject: BalconyStarChart
+Location: Balcony Star Chart
+Lore: "An illuminated star chart, displaying constellations and celestial pathways."
+[Emotion]: Curious
+[Intensity]: Medium
+[RealmTie]: Balcony
+[AssociatedCodex]: CodexEntry_BalconyChart
+REFLECTION: "The heavens whisper secrets to those who know how to listen."

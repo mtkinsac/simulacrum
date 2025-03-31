@@ -1,0 +1,3 @@
+[Realm]: Balcony
+[MoodTrigger]: Somber
+LINE: "Even the brightest stars can't pierce the darkness that lingers in my heart."

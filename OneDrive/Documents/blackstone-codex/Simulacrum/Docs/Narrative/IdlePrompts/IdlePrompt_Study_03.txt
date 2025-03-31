@@ -1,0 +1,3 @@
+[Realm]: Study
+[MoodTrigger]: Calm
+LINE: "The fire crackles... a comforting sound in this realm of mysteries."

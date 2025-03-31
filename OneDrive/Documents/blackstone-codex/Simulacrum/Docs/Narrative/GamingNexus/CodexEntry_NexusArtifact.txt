@@ -1,0 +1,6 @@
+CodexEntry: Nexus Artifact
+ID: NexusArtifact001
+Summary: An ancient artifact found within the Gaming Nexus, emitting a strange energy.
+Category: Artifact
+Tags: [Nexus], [Ancient], [Device], [Energy]
+Fallback Lore: "A relic of a forgotten age, its purpose remains shrouded in mystery."

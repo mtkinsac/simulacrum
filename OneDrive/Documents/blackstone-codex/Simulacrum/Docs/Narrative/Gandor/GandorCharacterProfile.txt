@@ -1,0 +1,15 @@
+Gandor Character Profile
+
+Tone: Cryptic, wise, with a hint of ancient sorrow.
+Voiceprint: Deep, resonant, with subtle echoes and distortions, as if speaking from multiple places at once.
+Emotional Range: Primarily reserved, but capable of expressing subtle shifts in tone to convey curiosity, concern, or veiled warnings.
+
+Core Narrative Function: Keeper of forgotten stories, cryptic mentor, and a potentially ancient entity guiding the player through the Nexus.
+
+Intro Dialogue:
+"Seek you knowledge? Or have the threads of fate drawn you here?"
+
+Fallback Lines:
+"The echoes of time whisper secrets."
+"Patience, seeker. The path reveals itself in time."
+"The veil thins... be wary."

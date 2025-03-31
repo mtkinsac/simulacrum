@@ -1,0 +1,3 @@
+[Realm]: General
+[MoodTrigger]: Tension
+LINE: "I have a feeling... something is about to change."

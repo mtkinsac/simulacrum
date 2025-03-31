@@ -1,0 +1,7 @@
+MemoryObject: BalconyRail
+Location: Balcony Observation Rail
+Lore: "A sturdy railing, overlooking a vast and breathtaking vista."
+[Emotion]: Somber
+[Intensity]: Low
+[RealmTie]: Balcony
+REFLECTION: "The edge of the world, a place of reflection and contemplation."

@@ -1,0 +1,8 @@
+MemoryObject: NexusPortalArch
+Location: Nexus Portal Arch
+Lore: "The portal arch shimmers, its surface rippling with unseen energies."
+[Emotion]: Awe
+[Intensity]: Medium
+[RealmTie]: GamingNexus
+[AssociatedCodex]: CodexEntry_NexusPortal
+REFLECTION: "A gateway to the unknown, beckoning me forward."

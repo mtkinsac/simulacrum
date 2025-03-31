@@ -1,37 +1,43 @@
 using UnityEngine;
-using System;
+
+// [Optional: Define AmbientFXProfile here or replace with your version if ScriptableObject]
+[System.Serializable]
+public class AmbientFXProfile
+{
+    public string fxName;
+    public GameObject effectPrefab;
+}
 
 public class TransitionEffectsManager : MonoBehaviour
 {
-    private AmbientFXProfile[] fxProfiles;
+    public static TransitionEffectsManager Instance;
 
-    void Awake()
+    public AmbientFXProfile[] ambientProfiles;
+
+    private void Awake()
     {
-        fxProfiles = Resources.LoadAll<AmbientFXProfile>("AmbientFXProfiles");
-        Debug.Log("TransitionEffectsManager: Loaded " + fxProfiles.Length + " ambient FX profiles.");
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
     }
 
-    public AmbientFXProfile GetProfileForDestination(string destinationID)
+    public void PlayFX(string fxName)
     {
-        foreach (AmbientFXProfile profile in fxProfiles)
+        foreach (var profile in ambientProfiles)
         {
-            if (profile.destinationID.Equals(destinationID, StringComparison.OrdinalIgnoreCase))
+            if (profile.fxName == fxName && profile.effectPrefab != null)
             {
-                return profile;
+                Instantiate(profile.effectPrefab, transform.position, Quaternion.identity);
+                return;
             }
         }
-        Debug.LogWarning("TransitionEffectsManager: No ambient FX profile found for " + destinationID + ". Using fallback.");
-        AmbientFXProfile fallback = Resources.Load<AmbientFXProfile>("AmbientFXProfile_Fallback");
-        return fallback;
+        Debug.LogWarning("FX not found: " + fxName);
     }
 
-    public void TriggerTransitionEffects(string destinationID)
+    public void PlayTransition(string transitionName)
     {
-        AmbientFXProfile profile = GetProfileForDestination(destinationID);
-        if (profile != null)
-        {
-            Debug.Log("TransitionEffectsManager: Triggering FX for destination: " + destinationID);
-            // Example: Set ambient audio, adjust lighting, instantiate visual effects.
-        }
+        Debug.Log("TransitionEffectsManager: Playing transition effect: " + transitionName);
+        PlayFX(transitionName);
     }
 }

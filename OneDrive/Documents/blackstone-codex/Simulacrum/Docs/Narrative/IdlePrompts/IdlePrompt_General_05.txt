@@ -1,0 +1,3 @@
+[Realm]: General
+[MoodTrigger]: Awe
+LINE: "The mysteries of the universe... they stretch out before us, vast and unending."

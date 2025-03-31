@@ -1,0 +1,6 @@
+CodexEntry: Nexus Runes
+ID: NexusRunes001
+Summary: Mysterious runes carved into the walls of the Gaming Nexus, their meaning unknown.
+Category: Lore
+Tags: [Nexus], [Ancient], [Symbol], [Mystic]
+Fallback Lore: "These symbols pulsate with an unseen power, their secrets locked away."

@@ -1,0 +1,3 @@
+[Realm]: General
+[MoodTrigger]: Joyful
+LINE: "There's a spark of hope in this place... a promise of something more."

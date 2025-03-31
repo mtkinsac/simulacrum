@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.IO;
+using System;
 
 public class ProfileManager : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class ProfileManager : MonoBehaviour
             File.WriteAllText(GetProfileFilePath(), json);
             Debug.Log("Profile saved.");
         }
-        catch (System.Exception ex)
+        catch (Exception ex)
         {
             Debug.LogError("Failed to save profile: " + ex.Message);
         }
@@ -49,7 +50,7 @@ public class ProfileManager : MonoBehaviour
                 Debug.Log("New profile created.");
             }
         }
-        catch (System.Exception ex)
+        catch (Exception ex)
         {
             Debug.LogError("Failed to load profile: " + ex.Message);
         }

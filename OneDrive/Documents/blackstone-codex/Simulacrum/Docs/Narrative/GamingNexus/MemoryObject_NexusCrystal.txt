@@ -1,0 +1,8 @@
+MemoryObject: NexusCrystal
+Location: Nexus Central Platform
+Lore: "The crystal pulses with a faint, rhythmic hum, its energy resonating with the Nexus itself."
+[Emotion]: Mystic
+[Intensity]: Medium
+[RealmTie]: GamingNexus
+[AssociatedCodex]: CodexEntry_NexusCrystal
+REFLECTION: "A heartbeat of the Nexus, ancient and powerful."

@@ -1,0 +1,3 @@
+[Realm]: Nexus
+[MoodTrigger]: Awe
+LINE: "The veils between worlds... they shimmer with such raw power here."

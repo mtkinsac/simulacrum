@@ -1,0 +1,3 @@
+[Realm]: General
+[MoodTrigger]: Somber
+LINE: "The weight of memories... it can be a heavy burden to bear."

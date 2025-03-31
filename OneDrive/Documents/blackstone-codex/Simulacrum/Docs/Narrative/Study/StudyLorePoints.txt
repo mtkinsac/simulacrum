@@ -1,0 +1,10 @@
+Study Lore Points:
+
+- "The Illuminated Codex": A large, leather-bound book on the DM table, containing cryptic symbols and diagrams. (MemoryObject: CodexBook)
+- "Whispering Scrolls": A collection of aged scrolls scattered across the rune table, containing fragments of ancient prophecies. (MemoryObject: RuneScrolls)
+- "Codex Echoes": Faint holographic projections of Codex entries that appear when the user gazes at specific points in the room. (CodexRegistrationManager integration)
+
+Summonable Monitor Lore Snippets:
+- "The stars align, and the veil thins."
+- "From the depths, a forgotten name rises."
+- "The Nexus whispers of shifting thresholds."

@@ -1,0 +1,7 @@
+Gandor Summon Dialogue Stubs:
+
+"You call upon me? What knowledge do you seek?"
+"The threads stir. What is your request?"
+"I hear your summons. Speak."
+"The echoes respond. What do you require?"
+"Your voice reaches across the veils. What is your need?"
