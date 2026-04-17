@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Simulacrum Studios — THE HIDDEN PATTERN</title>
-<meta name="description" content="Simulacrum Studios presents THE HIDDEN PATTERN — a five-book forensic investigation of the world we thought we knew. Coming soon." />
+<meta name="description" content="Simulacrum Studios presents THE HIDDEN PATTERN — a five-book forensic investigation of the world we thought we knew. Book One, The Great Amnesia, is available as a free PDF." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -406,6 +406,75 @@
   .signup-form button:hover { background: var(--gold-bright); border-color: var(--gold-bright); }
   .signup .micro { margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted); font-style: italic; }
 
+  /* CTA buttons */
+  .cta-row {
+    display: flex; flex-wrap: wrap; gap: 0.9rem;
+    margin-top: 1.8rem; align-items: center;
+  }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    padding: 0.95rem 1.6rem;
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 0.76rem; letter-spacing: 0.22em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--gold);
+  }
+  .cta-btn.primary {
+    background: var(--gold); color: var(--ink);
+  }
+  .cta-btn.primary:hover {
+    background: var(--gold-bright); border-color: var(--gold-bright);
+    transform: translateY(-1px);
+  }
+  .cta-btn.secondary {
+    background: transparent; color: var(--gold);
+  }
+  .cta-btn.secondary:hover {
+    background: rgba(184, 150, 109, 0.12); color: var(--gold-bright);
+    border-color: var(--gold-bright);
+  }
+  .cta-btn .icon {
+    font-size: 0.95rem; letter-spacing: 0;
+  }
+
+  /* Video embed — privacy-enhanced, responsive 16:9 */
+  .video-wrap {
+    position: relative; width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-top: 1.25rem;
+    border: 1px solid var(--line);
+    background: var(--ink-2);
+    overflow: hidden;
+  }
+  .video-wrap iframe {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; border: 0;
+  }
+  .book-card .video-wrap {
+    margin-top: 1rem;
+  }
+
+  /* Series composite section */
+  .series-banner {
+    padding: 0; margin: 5rem 0 3rem 0;
+    text-align: center;
+  }
+  .series-banner img {
+    display: block; width: 100%; max-width: 1400px;
+    margin: 0 auto; height: auto;
+    border: 1px solid var(--line);
+  }
+  .series-banner .banner-caption {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 1.2rem;
+    letter-spacing: 0.04em;
+  }
+
   footer { padding: 3rem 2rem; text-align: center; font-size: 0.82rem; color: var(--muted); }
   footer .motto {
     font-family: 'Cormorant Garamond', serif;
@@ -425,6 +494,8 @@
     section { padding: 4rem 0; }
     .signup-form { flex-direction: column; gap: 0.5rem; }
     .signup-form button { border: 1px solid var(--gold); }
+    .cta-row { justify-content: center; }
+    .cta-btn { width: 100%; justify-content: center; max-width: 380px; }
   }
   @media (max-width: 560px) {
     .book-card { grid-template-columns: 1fr; text-align: center; }
@@ -517,6 +588,11 @@
     <p>Five volumes. One investigation. Each book a movement in the same case.</p>
   </div>
 
+  <div class="series-banner">
+    <img src="img/series_composite.png" alt="The Hidden Pattern — all five book covers shown together in reading order" />
+    <div class="banner-caption">Five volumes. One continuous line of inquiry.</div>
+  </div>
+
   <div class="book-featured">
     <div class="cover-frame">
       <img src="covers/hidden_pattern_book1_great_amnesia.svg" alt="The Great Amnesia — Book One of The Hidden Pattern" />
@@ -533,9 +609,25 @@
         What the institution calls coincidence the detective calls a case file.
       </p>
       <div class="book-meta">
-        <div><strong>STATUS</strong>Complete Draft</div>
-        <div><strong>VOLUME</strong>~74,000 words</div>
+        <div><strong>STATUS</strong>Complete &middot; Free</div>
+        <div><strong>VOLUME</strong>~127,000 words</div>
         <div><strong>POSITION</strong>First in series</div>
+      </div>
+      <div class="cta-row">
+        <a class="cta-btn primary" href="downloads/The_Great_Amnesia.pdf" download>
+          <span class="icon">📖</span> Read Book One &middot; Free
+        </a>
+        <a class="cta-btn secondary" href="https://youtu.be/Cd9ZrPStE2Y" target="_blank" rel="noopener">
+          <span class="icon">▶</span> Watch the Overview
+        </a>
+      </div>
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/Cd9ZrPStE2Y?rel=0"
+          title="The Great Amnesia — Book One Overview"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"></iframe>
       </div>
     </div>
   </div>
@@ -558,6 +650,14 @@
           <span class="status complete">COMPLETE</span>
           <span>~88,000 words</span>
         </div>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/ENAUQFqst5U?rel=0"
+            title="Architects of Eden — Book Two Overview"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
+        </div>
       </div>
     </div>
 
@@ -578,6 +678,14 @@
           <span class="status complete">COMPLETE</span>
           <span>~96,000 words</span>
         </div>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/C_m_bbyR_u0?rel=0"
+            title="Codex of the Gods — Book Three Overview"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
+        </div>
       </div>
     </div>
 
@@ -596,8 +704,16 @@
           watched itself fall away, century by century.
         </p>
         <div class="meta">
-          <span class="status drafting">DRAFTING</span>
+          <span class="status complete">COMPLETE</span>
           <span>~86,000 words</span>
+        </div>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/N6kYCvzs86o?rel=0"
+            title="The Entropy Log — Book Four Overview"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
         </div>
       </div>
     </div>
@@ -618,6 +734,14 @@
         <div class="meta">
           <span class="status complete">COMPLETE</span>
           <span>~126,000 words</span>
+        </div>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/U_MYqnXn_TQ?rel=0"
+            title="The Simulation — Book Five Overview"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
         </div>
       </div>
     </div>
@@ -689,13 +813,13 @@
 <section id="signup">
   <div class="container">
     <div class="signup">
-      <h2>When the first book opens,<br>be the first to know.</h2>
-      <p>One message. When Book One is released. Nothing else.</p>
+      <h2>When the next book opens,<br>be the first to know.</h2>
+      <p>One message. When Book Two is released. Nothing else.</p>
       <form class="signup-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='✓ RECEIVED'; this.querySelector('input').value='';">
         <input type="email" placeholder="your.email@somewhere.world" required />
         <button type="submit">NOTIFY&nbsp;ME</button>
       </form>
-      <p class="micro">No newsletter. No marketing. A single dispatch when the case is ready to read.</p>
+      <p class="micro">No newsletter. No marketing. A single dispatch when the next case file is ready to read.</p>
     </div>
   </div>
 </section>
