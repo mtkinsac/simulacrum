@@ -1,0 +1,141 @@
+<svg width="680" height="1020" viewBox="0 0 680 1020" xmlns="http://www.w3.org/2000/svg">
+<title>The Simulation book cover</title>
+<desc>Cover for Book Five showing three vertically stacked layers of reality: the observer (eye in triangle) at top, the substrate (tesseract) in middle, and the render (wireframe globe) at bottom, connected by a vertical threading path.</desc>
+<defs>
+<linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#030812"/>
+<stop offset="50%" stop-color="#0B1B2E"/>
+<stop offset="100%" stop-color="#050A14"/>
+</linearGradient>
+</defs>
+<rect x="0" y="0" width="680" height="1020" fill="url(#bg5)"/>
+
+<!-- Starfield -->
+<circle cx="55" cy="180" r="0.9" fill="#F5E6D0" opacity="0.6"/>
+<circle cx="130" cy="240" r="0.7" fill="#F5E6D0" opacity="0.5"/>
+<circle cx="540" cy="190" r="1" fill="#F5E6D0" opacity="0.7"/>
+<circle cx="620" cy="280" r="0.7" fill="#F5E6D0" opacity="0.5"/>
+<circle cx="45" cy="400" r="0.8" fill="#F5E6D0" opacity="0.55"/>
+<circle cx="115" cy="460" r="0.7" fill="#F5E6D0" opacity="0.5"/>
+<circle cx="560" cy="430" r="0.9" fill="#F5E6D0" opacity="0.6"/>
+<circle cx="640" cy="560" r="0.7" fill="#F5E6D0" opacity="0.5"/>
+<circle cx="55" cy="560" r="0.9" fill="#F5E6D0" opacity="0.6"/>
+<circle cx="155" cy="640" r="0.7" fill="#F5E6D0" opacity="0.5"/>
+<circle cx="540" cy="640" r="0.8" fill="#F5E6D0" opacity="0.55"/>
+<circle cx="605" cy="720" r="0.9" fill="#F5E6D0" opacity="0.6"/>
+<circle cx="50" cy="720" r="0.7" fill="#F5E6D0" opacity="0.5"/>
+<circle cx="110" cy="780" r="0.8" fill="#F5E6D0" opacity="0.55"/>
+<circle cx="620" cy="780" r="0.9" fill="#F5E6D0" opacity="0.6"/>
+
+<!-- Series branding -->
+<line x1="180" y1="75" x2="295" y2="75" stroke="#B8966D" stroke-width="0.6" opacity="0.7"/>
+<line x1="385" y1="75" x2="500" y2="75" stroke="#B8966D" stroke-width="0.6" opacity="0.7"/>
+<text x="340" y="82" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#B8966D" letter-spacing="7" font-weight="400">THE HIDDEN PATTERN</text>
+<text x="340" y="118" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#8B7355" letter-spacing="8" font-weight="400">— BOOK FIVE —</text>
+
+<!-- Vertical connecting path -->
+<line x1="340" y1="340" x2="340" y2="365" stroke="#8B7355" stroke-width="1.2" stroke-dasharray="4 5" opacity="0.85"/>
+<line x1="340" y1="555" x2="340" y2="580" stroke="#8B7355" stroke-width="1.2" stroke-dasharray="4 5" opacity="0.85"/>
+<circle cx="340" cy="352" r="2" fill="#B8966D" opacity="0.7"/>
+<circle cx="340" cy="567" r="2" fill="#B8966D" opacity="0.7"/>
+
+<!-- CIRCLE 1: The Observer - Eye in Triangle (top) -->
+<circle cx="340" cy="245" r="95" fill="none" stroke="#B8966D" stroke-width="0.6" opacity="0.5"/>
+<circle cx="340" cy="245" r="90" fill="#2C1E10" stroke="#B8966D" stroke-width="1.5"/>
+
+<!-- Radiating light beams from triangle -->
+<g stroke="#050810" stroke-width="0.8" opacity="0.45">
+  <line x1="340" y1="175" x2="340" y2="165"/>
+  <line x1="305" y1="185" x2="298" y2="175"/>
+  <line x1="375" y1="185" x2="382" y2="175"/>
+  <line x1="275" y1="210" x2="265" y2="203"/>
+  <line x1="405" y1="210" x2="415" y2="203"/>
+  <line x1="258" y1="245" x2="248" y2="245"/>
+  <line x1="422" y1="245" x2="432" y2="245"/>
+  <line x1="275" y1="282" x2="265" y2="290"/>
+  <line x1="405" y1="282" x2="415" y2="290"/>
+</g>
+
+<!-- Triangle -->
+<polygon points="340 195 288 295 392 295" fill="none" stroke="#050810" stroke-width="2.5" stroke-linejoin="round"/>
+
+<!-- Eye inside triangle -->
+<ellipse cx="340" cy="260" rx="22" ry="12" fill="#050810"/>
+<ellipse cx="340" cy="260" rx="22" ry="12" fill="none" stroke="#2C1E10" stroke-width="1"/>
+<circle cx="340" cy="260" r="8" fill="#2C1E10"/>
+<circle cx="340" cy="260" r="4" fill="#050810"/>
+
+<text x="340" y="370" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#B8966D" letter-spacing="5" font-weight="500">OBSERVER</text>
+<text x="340" y="388" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#8B7355" letter-spacing="3" font-style="italic">consciousness</text>
+
+<!-- CIRCLE 2: The Substrate - Tesseract (middle) -->
+<circle cx="340" cy="460" r="95" fill="none" stroke="#B8966D" stroke-width="0.6" opacity="0.5"/>
+<circle cx="340" cy="460" r="90" fill="#2C1E10" stroke="#B8966D" stroke-width="1.5"/>
+
+<!-- Tesseract outer cube -->
+<g fill="none" stroke="#050810" stroke-width="1.8" stroke-linejoin="round">
+  <polygon points="300 445 380 445 380 495 300 495"/>
+  <polygon points="320 425 400 425 400 475 320 475"/>
+  <line x1="300" y1="445" x2="320" y2="425"/>
+  <line x1="380" y1="445" x2="400" y2="425"/>
+  <line x1="380" y1="495" x2="400" y2="475"/>
+  <line x1="300" y1="495" x2="320" y2="475"/>
+</g>
+
+<!-- Inner cube -->
+<g fill="none" stroke="#050810" stroke-width="1.2" stroke-linejoin="round" opacity="0.85">
+  <polygon points="325 458 363 458 363 488 325 488"/>
+  <polygon points="335 448 373 448 373 478 335 478"/>
+  <line x1="325" y1="458" x2="335" y2="448"/>
+  <line x1="363" y1="458" x2="373" y2="448"/>
+  <line x1="363" y1="488" x2="373" y2="478"/>
+  <line x1="325" y1="488" x2="335" y2="478"/>
+</g>
+
+<!-- Connecting edges between cubes -->
+<g stroke="#050810" stroke-width="0.7" opacity="0.6">
+  <line x1="300" y1="445" x2="325" y2="458"/>
+  <line x1="380" y1="445" x2="363" y2="458"/>
+  <line x1="380" y1="495" x2="363" y2="488"/>
+  <line x1="300" y1="495" x2="325" y2="488"/>
+  <line x1="320" y1="425" x2="335" y2="448"/>
+  <line x1="400" y1="425" x2="373" y2="448"/>
+  <line x1="400" y1="475" x2="373" y2="478"/>
+  <line x1="320" y1="475" x2="335" y2="478"/>
+</g>
+
+<text x="340" y="585" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#B8966D" letter-spacing="5" font-weight="500">SUBSTRATE</text>
+<text x="340" y="603" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#8B7355" letter-spacing="3" font-style="italic">the code beneath</text>
+
+<!-- CIRCLE 3: The Render - Wireframe Globe (bottom) -->
+<circle cx="340" cy="675" r="95" fill="none" stroke="#B8966D" stroke-width="0.6" opacity="0.5"/>
+<circle cx="340" cy="675" r="90" fill="#2C1E10" stroke="#B8966D" stroke-width="1.5"/>
+
+<!-- Wireframe globe -->
+<g fill="none" stroke="#050810" stroke-width="1.2">
+  <circle cx="340" cy="675" r="45" stroke-width="1.8"/>
+  <ellipse cx="340" cy="675" rx="45" ry="8"/>
+  <ellipse cx="340" cy="660" rx="42" ry="6" opacity="0.7"/>
+  <ellipse cx="340" cy="690" rx="42" ry="6" opacity="0.7"/>
+  <ellipse cx="340" cy="648" rx="35" ry="4" opacity="0.5"/>
+  <ellipse cx="340" cy="702" rx="35" ry="4" opacity="0.5"/>
+  <ellipse cx="340" cy="675" rx="10" ry="45" opacity="0.85"/>
+  <ellipse cx="340" cy="675" rx="25" ry="45" opacity="0.7"/>
+  <ellipse cx="340" cy="675" rx="38" ry="45" opacity="0.55"/>
+</g>
+
+<!-- Small continent suggestion -->
+<path d="M 330 660 Q 345 655, 355 662 Q 352 672, 340 670 Q 328 670, 330 660 Z" fill="#050810" opacity="0.8"/>
+<path d="M 325 685 Q 335 682, 340 688 Q 338 695, 330 693 Z" fill="#050810" opacity="0.6"/>
+
+<text x="340" y="800" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#B8966D" letter-spacing="5" font-weight="500">RENDER</text>
+<text x="340" y="818" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#8B7355" letter-spacing="3" font-style="italic">the world we see</text>
+
+<!-- Title block -->
+<line x1="80" y1="840" x2="600" y2="840" stroke="#B8966D" stroke-width="0.5" opacity="0.3"/>
+<text x="340" y="900" text-anchor="middle" font-family="Georgia, serif" font-size="64" fill="#F5E6D0" font-weight="700" letter-spacing="2">THE</text>
+<text x="340" y="965" text-anchor="middle" font-family="Georgia, serif" font-size="64" fill="#F5E6D0" font-weight="700" letter-spacing="2">SIMULATION</text>
+<line x1="240" y1="985" x2="440" y2="985" stroke="#B8966D" stroke-width="0.5" opacity="0.6"/>
+<text x="340" y="1008" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#B8966D" letter-spacing="6" font-weight="400">MICHAEL KNIGHT</text>
+
+</svg>
