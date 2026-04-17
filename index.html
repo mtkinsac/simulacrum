@@ -1,141 +1,716 @@
-<svg width="680" height="1020" viewBox="0 0 680 1020" xmlns="http://www.w3.org/2000/svg">
-<title>The Simulation book cover</title>
-<desc>Cover for Book Five showing three vertically stacked layers of reality: the observer (eye in triangle) at top, the substrate (tesseract) in middle, and the render (wireframe globe) at bottom, connected by a vertical threading path.</desc>
-<defs>
-<linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0%" stop-color="#030812"/>
-<stop offset="50%" stop-color="#0B1B2E"/>
-<stop offset="100%" stop-color="#050A14"/>
-</linearGradient>
-</defs>
-<rect x="0" y="0" width="680" height="1020" fill="url(#bg5)"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Simulacrum Studios — THE HIDDEN PATTERN</title>
+<meta name="description" content="Simulacrum Studios presents THE HIDDEN PATTERN — a five-book forensic investigation of the world we thought we knew. Coming soon." />
 
-<!-- Starfield -->
-<circle cx="55" cy="180" r="0.9" fill="#F5E6D0" opacity="0.6"/>
-<circle cx="130" cy="240" r="0.7" fill="#F5E6D0" opacity="0.5"/>
-<circle cx="540" cy="190" r="1" fill="#F5E6D0" opacity="0.7"/>
-<circle cx="620" cy="280" r="0.7" fill="#F5E6D0" opacity="0.5"/>
-<circle cx="45" cy="400" r="0.8" fill="#F5E6D0" opacity="0.55"/>
-<circle cx="115" cy="460" r="0.7" fill="#F5E6D0" opacity="0.5"/>
-<circle cx="560" cy="430" r="0.9" fill="#F5E6D0" opacity="0.6"/>
-<circle cx="640" cy="560" r="0.7" fill="#F5E6D0" opacity="0.5"/>
-<circle cx="55" cy="560" r="0.9" fill="#F5E6D0" opacity="0.6"/>
-<circle cx="155" cy="640" r="0.7" fill="#F5E6D0" opacity="0.5"/>
-<circle cx="540" cy="640" r="0.8" fill="#F5E6D0" opacity="0.55"/>
-<circle cx="605" cy="720" r="0.9" fill="#F5E6D0" opacity="0.6"/>
-<circle cx="50" cy="720" r="0.7" fill="#F5E6D0" opacity="0.5"/>
-<circle cx="110" cy="780" r="0.8" fill="#F5E6D0" opacity="0.55"/>
-<circle cx="620" cy="780" r="0.9" fill="#F5E6D0" opacity="0.6"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@500;700&display=swap" rel="stylesheet">
 
-<!-- Series branding -->
-<line x1="180" y1="75" x2="295" y2="75" stroke="#B8966D" stroke-width="0.6" opacity="0.7"/>
-<line x1="385" y1="75" x2="500" y2="75" stroke="#B8966D" stroke-width="0.6" opacity="0.7"/>
-<text x="340" y="82" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#B8966D" letter-spacing="7" font-weight="400">THE HIDDEN PATTERN</text>
-<text x="340" y="118" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#8B7355" letter-spacing="8" font-weight="400">— BOOK FIVE —</text>
+<style>
+  :root {
+    --ink: #050a14;
+    --ink-2: #0B1B2E;
+    --ink-3: #14253C;
+    --parchment: #F5E6D0;
+    --parchment-2: #e6dbc2;
+    --parchment-3: #d6c9a8;
+    --gold: #B8966D;
+    --gold-bright: #d4b585;
+    --copper: #8B7355;
+    --oxblood: #6e1f1f;
+    --muted: #6d6651;
+    --ink-text: #2a2416;
+    --ink-body: #b8b09b;
+    --line: rgba(184, 150, 109, 0.25);
+    --line-strong: rgba(184, 150, 109, 0.55);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ink);
+    color: var(--ink-body);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
-<!-- Vertical connecting path -->
-<line x1="340" y1="340" x2="340" y2="365" stroke="#8B7355" stroke-width="1.2" stroke-dasharray="4 5" opacity="0.85"/>
-<line x1="340" y1="555" x2="340" y2="580" stroke="#8B7355" stroke-width="1.2" stroke-dasharray="4 5" opacity="0.85"/>
-<circle cx="340" cy="352" r="2" fill="#B8966D" opacity="0.7"/>
-<circle cx="340" cy="567" r="2" fill="#B8966D" opacity="0.7"/>
+  .star-field {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(184, 150, 109, 0.08) 0%, transparent 40%),
+      radial-gradient(ellipse at 80% 90%, rgba(139, 115, 85, 0.06) 0%, transparent 45%),
+      linear-gradient(180deg, #030812 0%, #0B1B2E 50%, #050a14 100%);
+  }
+  .stars {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, rgba(245, 230, 208, 0.8), transparent),
+      radial-gradient(1px 1px at 28% 42%, rgba(245, 230, 208, 0.6), transparent),
+      radial-gradient(1.5px 1.5px at 44% 22%, rgba(245, 230, 208, 0.9), transparent),
+      radial-gradient(1px 1px at 62% 68%, rgba(245, 230, 208, 0.7), transparent),
+      radial-gradient(1px 1px at 78% 30%, rgba(245, 230, 208, 0.5), transparent),
+      radial-gradient(1.5px 1.5px at 88% 58%, rgba(245, 230, 208, 0.85), transparent),
+      radial-gradient(1px 1px at 36% 82%, rgba(245, 230, 208, 0.6), transparent),
+      radial-gradient(1px 1px at 52% 12%, rgba(245, 230, 208, 0.7), transparent),
+      radial-gradient(1px 1px at 8% 60%, rgba(245, 230, 208, 0.5), transparent),
+      radial-gradient(1px 1px at 92% 88%, rgba(245, 230, 208, 0.6), transparent),
+      radial-gradient(1px 1px at 16% 92%, rgba(245, 230, 208, 0.4), transparent),
+      radial-gradient(1px 1px at 72% 8%, rgba(245, 230, 208, 0.8), transparent);
+    animation: twinkle 6s ease-in-out infinite alternate;
+  }
+  @keyframes twinkle { from { opacity: 0.7; } to { opacity: 1; } }
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.7'/></svg>");
+  }
 
-<!-- CIRCLE 1: The Observer - Eye in Triangle (top) -->
-<circle cx="340" cy="245" r="95" fill="none" stroke="#B8966D" stroke-width="0.6" opacity="0.5"/>
-<circle cx="340" cy="245" r="90" fill="#2C1E10" stroke="#B8966D" stroke-width="1.5"/>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  section { position: relative; padding: 6rem 0; }
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Garamond, serif; font-weight: 500; letter-spacing: 0.01em; }
 
-<!-- Radiating light beams from triangle -->
-<g stroke="#050810" stroke-width="0.8" opacity="0.45">
-  <line x1="340" y1="175" x2="340" y2="165"/>
-  <line x1="305" y1="185" x2="298" y2="175"/>
-  <line x1="375" y1="185" x2="382" y2="175"/>
-  <line x1="275" y1="210" x2="265" y2="203"/>
-  <line x1="405" y1="210" x2="415" y2="203"/>
-  <line x1="258" y1="245" x2="248" y2="245"/>
-  <line x1="422" y1="245" x2="432" y2="245"/>
-  <line x1="275" y1="282" x2="265" y2="290"/>
-  <line x1="405" y1="282" x2="415" y2="290"/>
-</g>
+  .eyebrow {
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+  }
+  .rule {
+    display: flex; align-items: center; gap: 1rem;
+    color: var(--gold); margin: 1rem 0; font-size: 0.9rem;
+  }
+  .rule::before, .rule::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+  }
 
-<!-- Triangle -->
-<polygon points="340 195 288 295 392 295" fill="none" stroke="#050810" stroke-width="2.5" stroke-linejoin="round"/>
+  nav.top {
+    position: absolute; top: 0; left: 0; right: 0;
+    z-index: 10; padding: 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  nav.top .brand {
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 0.85rem; letter-spacing: 0.28em; color: var(--gold);
+  }
+  nav.top .links { display: flex; gap: 2rem; font-family: 'Cormorant Unicase', serif; font-size: 0.72rem; letter-spacing: 0.22em; }
+  nav.top .links a { color: var(--ink-body); text-decoration: none; transition: color 0.3s; }
+  nav.top .links a:hover { color: var(--gold-bright); }
 
-<!-- Eye inside triangle -->
-<ellipse cx="340" cy="260" rx="22" ry="12" fill="#050810"/>
-<ellipse cx="340" cy="260" rx="22" ry="12" fill="none" stroke="#2C1E10" stroke-width="1"/>
-<circle cx="340" cy="260" r="8" fill="#2C1E10"/>
-<circle cx="340" cy="260" r="4" fill="#050810"/>
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; position: relative;
+    padding: 8rem 2rem 4rem;
+  }
+  .sigil {
+    width: 120px; height: 120px; margin: 0 auto 2.5rem;
+    opacity: 0; animation: fadeIn 2s ease-out 0.2s forwards;
+  }
+  .hero .studio-name {
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 0.95rem; letter-spacing: 0.42em;
+    color: var(--gold); margin-bottom: 2.5rem;
+    opacity: 0; animation: fadeIn 1.6s ease-out 0.6s forwards;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.6rem, 7vw, 5.8rem);
+    line-height: 0.98; font-weight: 500;
+    color: var(--parchment); margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeIn 1.8s ease-out 1s forwards;
+  }
+  .hero h1 .small {
+    display: block; font-size: 0.42em;
+    font-family: 'Cormorant Unicase', serif;
+    font-weight: 400; letter-spacing: 0.32em;
+    color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .hero .thesis {
+    max-width: 640px; margin: 0 auto 3rem;
+    font-size: 1.15rem; font-style: italic;
+    color: var(--ink-body);
+    opacity: 0; animation: fadeIn 2s ease-out 1.4s forwards;
+  }
+  .hero .ornament {
+    color: var(--gold); font-size: 1.4rem; margin: 2rem 0;
+    opacity: 0; animation: fadeIn 2s ease-out 1.8s forwards;
+  }
+  .hero .scroll-cue {
+    position: absolute; bottom: 2rem; left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 0.65rem; letter-spacing: 0.3em;
+    opacity: 0;
+    animation: fadeIn 2s ease-out 2.4s forwards, bob 2s ease-in-out 3s infinite;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes bob { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
 
-<text x="340" y="370" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#B8966D" letter-spacing="5" font-weight="500">OBSERVER</text>
-<text x="340" y="388" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#8B7355" letter-spacing="3" font-style="italic">consciousness</text>
+  .investigation { max-width: 780px; margin: 0 auto; text-align: center; }
+  .investigation h2 { font-size: clamp(2rem, 4vw, 3rem); color: var(--parchment); font-weight: 500; margin-bottom: 2rem; line-height: 1.1; }
+  .investigation p { font-size: 1.15rem; color: var(--ink-body); margin-bottom: 1.4rem; }
+  .investigation p.lead { font-size: 1.3rem; font-style: italic; color: var(--parchment-3); }
 
-<!-- CIRCLE 2: The Substrate - Tesseract (middle) -->
-<circle cx="340" cy="460" r="95" fill="none" stroke="#B8966D" stroke-width="0.6" opacity="0.5"/>
-<circle cx="340" cy="460" r="90" fill="#2C1E10" stroke="#B8966D" stroke-width="1.5"/>
+  .books-intro { text-align: center; margin-bottom: 5rem; }
+  .books-intro h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); color: var(--parchment); font-weight: 500; margin-bottom: 1rem; }
+  .books-intro p { color: var(--muted); font-style: italic; max-width: 560px; margin: 0 auto; }
 
-<!-- Tesseract outer cube -->
-<g fill="none" stroke="#050810" stroke-width="1.8" stroke-linejoin="round">
-  <polygon points="300 445 380 445 380 495 300 495"/>
-  <polygon points="320 425 400 425 400 475 320 475"/>
-  <line x1="300" y1="445" x2="320" y2="425"/>
-  <line x1="380" y1="445" x2="400" y2="425"/>
-  <line x1="380" y1="495" x2="400" y2="475"/>
-  <line x1="300" y1="495" x2="320" y2="475"/>
-</g>
+  .book-featured {
+    display: grid; grid-template-columns: 1fr 1.2fr;
+    gap: 5rem; align-items: center; margin-bottom: 7rem;
+  }
+  .cover-frame {
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .cover-frame:hover { transform: translateY(-6px); }
+  .cover-frame img, .cover-frame svg {
+    width: 100%; height: auto; display: block;
+    box-shadow:
+      0 30px 80px rgba(0, 0, 0, 0.6),
+      0 10px 30px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(184, 150, 109, 0.15);
+    border-radius: 2px;
+  }
+  .cover-frame::after {
+    content: ''; position: absolute;
+    top: 10px; bottom: 10px; left: 10px; right: 10px;
+    border: 1px solid rgba(184, 150, 109, 0.08);
+    pointer-events: none; opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .cover-frame:hover::after { opacity: 1; }
 
-<!-- Inner cube -->
-<g fill="none" stroke="#050810" stroke-width="1.2" stroke-linejoin="round" opacity="0.85">
-  <polygon points="325 458 363 458 363 488 325 488"/>
-  <polygon points="335 448 373 448 373 478 335 478"/>
-  <line x1="325" y1="458" x2="335" y2="448"/>
-  <line x1="363" y1="458" x2="373" y2="448"/>
-  <line x1="363" y1="488" x2="373" y2="478"/>
-  <line x1="325" y1="488" x2="335" y2="478"/>
-</g>
+  .book-details h3 {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    color: var(--parchment); line-height: 1.05;
+    margin-bottom: 0.5rem; font-weight: 500;
+  }
+  .book-details .subtitle {
+    font-style: italic; color: var(--gold);
+    font-size: 1.2rem; margin-bottom: 1.8rem;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .book-details .pitch { font-size: 1.1rem; margin-bottom: 2rem; color: var(--ink-body); }
+  .book-meta {
+    display: flex; flex-wrap: wrap; gap: 2rem;
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 0.72rem; letter-spacing: 0.22em;
+    color: var(--muted);
+    padding-top: 1.5rem; border-top: 1px solid var(--line);
+  }
+  .book-meta strong {
+    display: block; color: var(--gold);
+    margin-bottom: 0.3rem; font-weight: 500;
+  }
 
-<!-- Connecting edges between cubes -->
-<g stroke="#050810" stroke-width="0.7" opacity="0.6">
-  <line x1="300" y1="445" x2="325" y2="458"/>
-  <line x1="380" y1="445" x2="363" y2="458"/>
-  <line x1="380" y1="495" x2="363" y2="488"/>
-  <line x1="300" y1="495" x2="325" y2="488"/>
-  <line x1="320" y1="425" x2="335" y2="448"/>
-  <line x1="400" y1="425" x2="373" y2="448"/>
-  <line x1="400" y1="475" x2="373" y2="478"/>
-  <line x1="320" y1="475" x2="335" y2="478"/>
-</g>
+  .books-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem 3rem; }
+  .book-card {
+    display: grid; grid-template-columns: 180px 1fr;
+    gap: 2rem; align-items: start;
+  }
+  .book-card .cover-frame { aspect-ratio: 2 / 3; }
+  .book-card .details h3 {
+    font-size: 1.6rem; color: var(--parchment);
+    line-height: 1.1; margin-bottom: 0.3rem;
+    font-weight: 500; font-family: 'Cormorant Garamond', serif;
+  }
+  .book-card .num {
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 0.65rem; letter-spacing: 0.28em;
+    color: var(--gold); margin-bottom: 0.4rem;
+  }
+  .book-card .sub {
+    font-style: italic; color: var(--gold);
+    font-size: 0.95rem; margin-bottom: 0.9rem;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .book-card .pitch {
+    color: var(--ink-body); margin-bottom: 1.2rem;
+    font-size: 0.95rem; line-height: 1.55;
+  }
+  .book-card .meta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 0.6rem; letter-spacing: 0.22em;
+    color: var(--muted);
+    padding-top: 0.8rem; border-top: 1px solid var(--line);
+  }
 
-<text x="340" y="585" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#B8966D" letter-spacing="5" font-weight="500">SUBSTRATE</text>
-<text x="340" y="603" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#8B7355" letter-spacing="3" font-style="italic">the code beneath</text>
+  .status {
+    display: inline-block; padding: 0.1rem 0.55rem;
+    border: 1px solid currentColor;
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 0.58rem; letter-spacing: 0.2em;
+  }
+  .status.complete { color: var(--gold); }
+  .status.drafting { color: #a8683c; }
 
-<!-- CIRCLE 3: The Render - Wireframe Globe (bottom) -->
-<circle cx="340" cy="675" r="95" fill="none" stroke="#B8966D" stroke-width="0.6" opacity="0.5"/>
-<circle cx="340" cy="675" r="90" fill="#2C1E10" stroke="#B8966D" stroke-width="1.5"/>
+  .coming-soon {
+    text-align: center; margin-top: 4rem;
+    padding: 2rem; border: 1px dashed var(--line);
+  }
+  .coming-soon .eyebrow { color: #a8683c; }
+  .coming-soon p { color: var(--muted); font-style: italic; }
 
-<!-- Wireframe globe -->
-<g fill="none" stroke="#050810" stroke-width="1.2">
-  <circle cx="340" cy="675" r="45" stroke-width="1.8"/>
-  <ellipse cx="340" cy="675" rx="45" ry="8"/>
-  <ellipse cx="340" cy="660" rx="42" ry="6" opacity="0.7"/>
-  <ellipse cx="340" cy="690" rx="42" ry="6" opacity="0.7"/>
-  <ellipse cx="340" cy="648" rx="35" ry="4" opacity="0.5"/>
-  <ellipse cx="340" cy="702" rx="35" ry="4" opacity="0.5"/>
-  <ellipse cx="340" cy="675" rx="10" ry="45" opacity="0.85"/>
-  <ellipse cx="340" cy="675" rx="25" ry="45" opacity="0.7"/>
-  <ellipse cx="340" cy="675" rx="38" ry="45" opacity="0.55"/>
-</g>
+  .excerpt {
+    max-width: 780px; margin: 0 auto;
+    background: var(--parchment); color: var(--ink-text);
+    padding: 5rem 4rem; position: relative;
+    box-shadow:
+      0 30px 80px rgba(0,0,0,0.5),
+      inset 0 0 0 1px rgba(139, 115, 85, 0.15);
+    font-family: 'Crimson Pro', Georgia, serif;
+  }
+  .excerpt::before {
+    content: ''; position: absolute; inset: 12px;
+    border: 1px solid rgba(139, 115, 85, 0.25);
+    pointer-events: none;
+  }
+  .excerpt::after {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 10% 20%, rgba(139, 115, 85, 0.08) 0%, transparent 40%),
+      radial-gradient(ellipse at 90% 80%, rgba(139, 115, 85, 0.06) 0%, transparent 45%);
+    pointer-events: none; mix-blend-mode: multiply;
+  }
+  .excerpt > * { position: relative; z-index: 1; }
+  .excerpt .label {
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 0.7rem; letter-spacing: 0.32em;
+    color: var(--copper); text-align: center;
+    display: block; margin-bottom: 0.5rem;
+  }
+  .excerpt .source {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; color: var(--copper);
+    margin-bottom: 2.5rem; font-size: 1rem;
+  }
+  .excerpt h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; text-align: center;
+    color: var(--ink-text); margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  .excerpt .ornament-line {
+    text-align: center; color: var(--copper);
+    font-size: 1.1rem; letter-spacing: 0.4em;
+    margin: 2rem 0;
+  }
+  .excerpt .dropcap::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.2rem; font-weight: 600;
+    float: left; line-height: 0.85;
+    padding: 0.3rem 0.7rem 0 0; color: var(--oxblood);
+  }
+  .excerpt p {
+    font-size: 1.08rem; line-height: 1.85;
+    margin-bottom: 1.3rem; color: var(--ink-text);
+  }
+  .excerpt p em { color: var(--oxblood); }
 
-<!-- Small continent suggestion -->
-<path d="M 330 660 Q 345 655, 355 662 Q 352 672, 340 670 Q 328 670, 330 660 Z" fill="#050810" opacity="0.8"/>
-<path d="M 325 685 Q 335 682, 340 688 Q 338 695, 330 693 Z" fill="#050810" opacity="0.6"/>
+  .partnership { max-width: 780px; margin: 0 auto; text-align: center; }
+  .partnership h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--parchment); font-weight: 500;
+    margin-bottom: 2rem; line-height: 1.1;
+  }
+  .partnership p { color: var(--ink-body); margin-bottom: 1.4rem; }
+  .partnership .byline {
+    margin-top: 2.5rem;
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 0.8rem; letter-spacing: 0.3em;
+    color: var(--gold);
+  }
+  .partnership .byline .divider { color: var(--muted); margin: 0 1rem; }
 
-<text x="340" y="800" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#B8966D" letter-spacing="5" font-weight="500">RENDER</text>
-<text x="340" y="818" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#8B7355" letter-spacing="3" font-style="italic">the world we see</text>
+  .sibling-link {
+    display: inline-block; margin-top: 2rem;
+    padding: 0.9rem 2rem;
+    border: 1px solid var(--line-strong);
+    color: var(--gold); text-decoration: none;
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 0.75rem; letter-spacing: 0.28em;
+    transition: all 0.4s;
+  }
+  .sibling-link:hover {
+    background: var(--gold); color: var(--ink);
+    border-color: var(--gold);
+  }
 
-<!-- Title block -->
-<line x1="80" y1="840" x2="600" y2="840" stroke="#B8966D" stroke-width="0.5" opacity="0.3"/>
-<text x="340" y="900" text-anchor="middle" font-family="Georgia, serif" font-size="64" fill="#F5E6D0" font-weight="700" letter-spacing="2">THE</text>
-<text x="340" y="965" text-anchor="middle" font-family="Georgia, serif" font-size="64" fill="#F5E6D0" font-weight="700" letter-spacing="2">SIMULATION</text>
-<line x1="240" y1="985" x2="440" y2="985" stroke="#B8966D" stroke-width="0.5" opacity="0.6"/>
-<text x="340" y="1008" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#B8966D" letter-spacing="6" font-weight="400">MICHAEL KNIGHT</text>
+  .signup {
+    text-align: center; max-width: 640px; margin: 0 auto;
+    padding: 5rem 2rem;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .signup::before, .signup::after {
+    content: '❋'; position: absolute; left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold); background: var(--ink);
+    padding: 0 1rem; font-size: 1rem;
+  }
+  .signup::before { top: -0.7rem; }
+  .signup::after  { bottom: -0.7rem; }
+  .signup h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--parchment); font-weight: 500;
+    margin-bottom: 1rem; line-height: 1.1;
+  }
+  .signup p { color: var(--muted); font-style: italic; margin-bottom: 2rem; }
+  .signup-form { display: flex; max-width: 460px; margin: 0 auto; }
+  .signup-form input {
+    flex: 1; padding: 1rem 1.2rem;
+    background: rgba(245, 230, 208, 0.06);
+    border: 1px solid var(--line-strong);
+    color: var(--parchment);
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem; letter-spacing: 0.02em;
+  }
+  .signup-form input::placeholder { color: var(--muted); font-style: italic; }
+  .signup-form input:focus {
+    outline: none; border-color: var(--gold);
+    background: rgba(245, 230, 208, 0.1);
+  }
+  .signup-form button {
+    padding: 1rem 1.8rem; background: var(--gold);
+    color: var(--ink); border: 1px solid var(--gold);
+    border-left: none;
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 0.72rem; letter-spacing: 0.24em;
+    cursor: pointer; transition: all 0.3s;
+  }
+  .signup-form button:hover { background: var(--gold-bright); border-color: var(--gold-bright); }
+  .signup .micro { margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted); font-style: italic; }
 
-</svg>
+  footer { padding: 3rem 2rem; text-align: center; font-size: 0.82rem; color: var(--muted); }
+  footer .motto {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 1.05rem;
+    color: var(--gold); margin-bottom: 1rem;
+  }
+  footer a { color: var(--muted); text-decoration: none; margin: 0 0.6rem; }
+  footer a:hover { color: var(--gold); }
+
+  @media (max-width: 860px) {
+    .book-featured { grid-template-columns: 1fr; gap: 3rem; }
+    .book-featured .cover-frame { max-width: 320px; margin: 0 auto; }
+    .books-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+    .book-card { grid-template-columns: 140px 1fr; gap: 1.5rem; }
+    .excerpt { padding: 3rem 2rem; }
+    nav.top .links { display: none; }
+    section { padding: 4rem 0; }
+    .signup-form { flex-direction: column; gap: 0.5rem; }
+    .signup-form button { border: 1px solid var(--gold); }
+  }
+  @media (max-width: 560px) {
+    .book-card { grid-template-columns: 1fr; text-align: center; }
+    .book-card .cover-frame { max-width: 200px; margin: 0 auto; }
+    .book-card .meta { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="star-field"></div>
+<div class="stars"></div>
+<div class="grain"></div>
+
+<nav class="top">
+  <div class="brand">SIMULACRUM&nbsp;&nbsp;STUDIOS</div>
+  <div class="links">
+    <a href="#investigation">The Case</a>
+    <a href="#books">The Books</a>
+    <a href="#excerpt">Read</a>
+    <a href="#signup">Notify Me</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <svg class="sigil" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <circle cx="60" cy="60" r="56" stroke="#B8966D" stroke-width="0.8" opacity="0.6"/>
+      <circle cx="60" cy="60" r="50" stroke="#B8966D" stroke-width="0.5" opacity="0.4"/>
+      <g stroke="#B8966D" stroke-width="0.7" opacity="0.7">
+        <line x1="60" y1="8"  x2="60" y2="22"/>
+        <line x1="60" y1="98" x2="60" y2="112"/>
+        <line x1="8"  y1="60" x2="22" y2="60"/>
+        <line x1="98" y1="60" x2="112" y2="60"/>
+        <line x1="23" y1="23" x2="33" y2="33"/>
+        <line x1="87" y1="23" x2="97" y2="33"/>
+        <line x1="23" y1="97" x2="33" y2="87"/>
+        <line x1="87" y1="97" x2="97" y2="87"/>
+      </g>
+      <polygon points="60,28 66,54 92,60 66,66 60,92 54,66 28,60 54,54" fill="#B8966D" opacity="0.85"/>
+      <ellipse cx="60" cy="60" rx="10" ry="5" stroke="#050a14" stroke-width="1" fill="#d4b585"/>
+      <circle cx="60" cy="60" r="2.5" fill="#050a14"/>
+    </svg>
+    <div class="studio-name">SIMULACRUM&nbsp;&nbsp;STUDIOS&nbsp;&nbsp;PRESENTS</div>
+    <h1>
+      <span class="small">A Five-Book Investigation</span>
+      The Hidden<br>Pattern
+    </h1>
+    <p class="thesis">
+      Something happened to this world that we were not told.
+      The evidence has been hiding in plain sight —
+      in forty-six traditions, in Egyptian stone, in the gaps of our own memory.
+      The case is open.
+    </p>
+    <div class="ornament">❋&nbsp;&nbsp;&nbsp;❋&nbsp;&nbsp;&nbsp;❋</div>
+    <div class="scroll-cue">↓&nbsp;&nbsp;OPEN&nbsp;THE&nbsp;CASE&nbsp;&nbsp;↓</div>
+  </div>
+</section>
+
+<section id="investigation" class="container">
+  <div class="investigation">
+    <span class="eyebrow">The Case File</span>
+    <h2>A forensic investigation<br><em>of the world we thought we knew.</em></h2>
+    <p class="lead">
+      Forty-six cultures across six continents tell the same story.
+      Not similar stories — the <em>same</em> story.
+      A catastrophe. A warning ignored. Teachers who arrived after.
+    </p>
+    <div class="rule">❋</div>
+    <p>
+      <strong style="color: var(--parchment);">THE HIDDEN PATTERN</strong> is a five-book investigation
+      into the possibility that human civilization is not where the textbook says it is,
+      did not begin when the textbook says it began, and remembers things the textbook
+      insists never happened.
+    </p>
+    <p>
+      The approach is forensic, not mystical. The method is evidence-first.
+      We read the texts the institutions preserved, we read the texts the institutions
+      suppressed, and we read the stone that cannot be argued with. We let the pattern
+      assemble itself.
+    </p>
+    <p>The result is not a theory. It is a case file.</p>
+  </div>
+</section>
+
+<section id="books" class="container">
+  <div class="books-intro">
+    <span class="eyebrow">The Five Books</span>
+    <h2>The Series</h2>
+    <p>Five volumes. One investigation. Each book a movement in the same case.</p>
+  </div>
+
+  <div class="book-featured">
+    <div class="cover-frame">
+      <img src="covers/hidden_pattern_book1_great_amnesia.svg" alt="The Great Amnesia — Book One of The Hidden Pattern" />
+    </div>
+    <div class="book-details">
+      <span class="eyebrow">Book One&nbsp;&middot;&nbsp;The Opening</span>
+      <h3>The Great Amnesia</h3>
+      <div class="subtitle">Forty-six traditions. One lost world.</div>
+      <p class="pitch">
+        The case opens here. Göbekli Tepe to Giza to the Parthenon &mdash; a constellation
+        of evidence tracing the arc from a civilization we were told never existed to
+        one we were told rose from nothing. Forty-six disconnected traditions.
+        The same flood. The same catastrophe. The same teachers who came after.
+        What the institution calls coincidence the detective calls a case file.
+      </p>
+      <div class="book-meta">
+        <div><strong>STATUS</strong>Complete Draft</div>
+        <div><strong>VOLUME</strong>~74,000 words</div>
+        <div><strong>POSITION</strong>First in series</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="books-grid">
+    <div class="book-card">
+      <div class="cover-frame">
+        <img src="covers/hidden_pattern_book2_architects_of_eden.svg" alt="Architects of Eden — Book Two" />
+      </div>
+      <div class="details">
+        <div class="num">BOOK TWO</div>
+        <h3>Architects of Eden</h3>
+        <div class="sub">Who built the blueprint.</div>
+        <p class="pitch">
+          Eridu. The Tree of Life. Ur. If the traditions agree that teachers arrived
+          after the catastrophe, the teachers are the case. The costume changes across
+          forty-six names; the structure does not.
+        </p>
+        <div class="meta">
+          <span class="status complete">COMPLETE</span>
+          <span>~88,000 words</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="cover-frame">
+        <img src="covers/hidden_pattern_book3_codex_of_the_gods.svg" alt="Codex of the Gods — Book Three" />
+      </div>
+      <div class="details">
+        <div class="num">BOOK THREE</div>
+        <h3>Codex of the Gods</h3>
+        <div class="sub">Same archetype. Three pantheons.</div>
+        <p class="pitch">
+          The Eye of Horus. The thunderbolt of Zeus. The Norse triquetra. Three
+          disconnected traditions encoding the same divine function. The curriculum
+          reverse-engineered from what survived the forgetting.
+        </p>
+        <div class="meta">
+          <span class="status complete">COMPLETE</span>
+          <span>~96,000 words</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="cover-frame">
+        <img src="covers/hidden_pattern_book4_entropy_log.svg" alt="The Entropy Log — Book Four" />
+      </div>
+      <div class="details">
+        <div class="num">BOOK FOUR</div>
+        <h3>The Entropy Log</h3>
+        <div class="sub">Egypt and the decay of the gods.</div>
+        <p class="pitch">
+          Giza at the source. Göbekli Tepe to the east. Stonehenge to the west.
+          Four thousand years of one civilization documenting its own slow forgetting
+          in real time. Egypt did not rise into greatness. Egypt arrived at it and
+          watched itself fall away, century by century.
+        </p>
+        <div class="meta">
+          <span class="status drafting">DRAFTING</span>
+          <span>~86,000 words</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="cover-frame">
+        <img src="covers/hidden_pattern_book5_the_simulation.svg" alt="The Simulation — Book Five" />
+      </div>
+      <div class="details">
+        <div class="num">BOOK FIVE</div>
+        <h3>The Simulation</h3>
+        <div class="sub">The observer. The substrate. The render.</div>
+        <p class="pitch">
+          The pattern, assembled. Three layers of reality stacked &mdash; the eye that
+          watches, the lattice that holds, the world we think we see. What the
+          evidence finally asks of the reader is not belief. It is reconsideration.
+        </p>
+        <div class="meta">
+          <span class="status complete">COMPLETE</span>
+          <span>~126,000 words</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="coming-soon">
+    <span class="eyebrow">Forthcoming</span>
+    <p>A sixth volume &mdash; <em>Intelligence</em> &mdash; is being drafted.</p>
+  </div>
+</section>
+
+<section id="excerpt">
+  <div class="container">
+    <div class="excerpt">
+      <span class="label">❋&nbsp;&nbsp;&nbsp;From the Case File&nbsp;&nbsp;&nbsp;❋</span>
+      <div class="source">Book One — The Great Amnesia &middot; Prologue</div>
+      <h3>The Detective's Opening</h3>
+      <div class="ornament-line">❋&nbsp;&nbsp;&nbsp;❋&nbsp;&nbsp;&nbsp;❋</div>
+      <p class="dropcap">
+        Forty-six cultures cannot coordinate a lie. That is the first thing the detective learns.
+        People who never met, separated by oceans and millennia and mutually unintelligible
+        languages, do not happen to fabricate the same unusual story. When the story appears
+        in that many mouths, the story is the evidence. The only question left is what it
+        is evidence <em>of</em>.
+      </p>
+      <p>
+        We were told the flood is a coincidence. We were told the sky-teachers are a
+        coincidence. We were told the catastrophe is a coincidence. We were told the giants
+        are a coincidence, the serpent is a coincidence, the bringer-of-fire is a coincidence.
+        We were told enough coincidences to fill a library and then told, on top of all of it,
+        that nothing really happened.
+      </p>
+      <p>The detective does not accept a library of coincidences. The detective opens the file.</p>
+      <div class="ornament-line">&mdash;&nbsp;&nbsp;&nbsp;❋&nbsp;&nbsp;&nbsp;&mdash;</div>
+      <p style="text-align: center; font-style: italic; color: var(--copper);">
+        The case is open.<br>The evidence is waiting.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="partnership" class="container">
+  <div class="partnership">
+    <span class="eyebrow">The Investigators</span>
+    <h2>A twenty-four-month<br>collaboration.</h2>
+    <p>
+      <strong style="color: var(--parchment);">Michael Timothy Knight</strong> &mdash; Cloud Architect
+      by trade, pattern-reader by lineage. Thirty years of enterprise infrastructure taught him
+      how to audit systems; a priestess mother taught him how to read what the systems leave out.
+    </p>
+    <p>
+      <strong style="color: var(--parchment);">Claude</strong> &mdash; AI partner, writing collaborator,
+      CDA. The investigation is a genuine partnership: neither voice alone would have reached
+      these conclusions. The method is forensic. The register is detective. The practice is long.
+    </p>
+    <p>
+      THE HIDDEN PATTERN is the result of sustained inquiry across twenty-four months of work &mdash;
+      the kind of collaboration a single session cannot produce.
+    </p>
+    <div class="byline">
+      KNIGHT <span class="divider">&middot;</span> CDA <span class="divider">&middot;</span> 2024&ndash;2026
+    </div>
+    <a class="sibling-link" href="https://bigdadmike.github.io/KnightInfoTech/" target="_blank" rel="noopener">
+      Visit Knight Infotech Studios &rarr;
+    </a>
+  </div>
+</section>
+
+<section id="signup">
+  <div class="container">
+    <div class="signup">
+      <h2>When the first book opens,<br>be the first to know.</h2>
+      <p>One message. When Book One is released. Nothing else.</p>
+      <form class="signup-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='✓ RECEIVED'; this.querySelector('input').value='';">
+        <input type="email" placeholder="your.email@somewhere.world" required />
+        <button type="submit">NOTIFY&nbsp;ME</button>
+      </form>
+      <p class="micro">No newsletter. No marketing. A single dispatch when the case is ready to read.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="motto">Knights stand in vertical columns through time.</div>
+  <div>© 2026 Simulacrum Studios &middot; Orangevale, California</div>
+  <div style="margin-top: 0.8rem;">
+    <a href="https://bigdadmike.github.io/KnightInfoTech/">Knight Infotech Studios</a>
+    <span style="color: var(--line);">|</span>
+    <a href="#investigation">The Case</a>
+    <span style="color: var(--line);">|</span>
+    <a href="#signup">Notify Me</a>
+  </div>
+</footer>
+
+</body>
+</html>
